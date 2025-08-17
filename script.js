@@ -166,16 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateScrollProgress);
     
-    // Add floating animation to CTA buttons
+    // CTA buttons without floating animation
     const ctaButtons = document.querySelectorAll('.cta-button');
-    ctaButtons.forEach((button, index) => {
-        setInterval(() => {
-            button.style.transform = 'translateY(-2px)';
-            setTimeout(() => {
-                button.style.transform = 'translateY(0)';
-            }, 1000);
-        }, 3000 + (index * 500)); // Stagger the animation
-    });
     
     // Add stagger animation to various grid items
     const portfolioItems = document.querySelectorAll('.portfolio-item, .category-item, .gallery-item');
@@ -294,14 +286,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add CSS animations dynamically
 const additionalStyles = `
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-    }
-    
-    .cta-button {
-        animation: float 3s ease-in-out infinite;
-    }
     
     .hamburger.active span:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
