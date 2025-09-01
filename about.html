@@ -3,94 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT | Milin Seth Photography</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>About - Milin Seth Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --cream: #F8F6F0;
+            --warm-white: #FEFCF7;
+            --sage: #A8B5A0;
+            --forest: #4A5D23;
+            --charcoal: #2C2C2C;
+            --accent-terracotta: #C17B5A;
+            --soft-brown: #8B7355;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+        }
+        
+        .bg-cream { background-color: var(--cream); }
+        .bg-warm-white { background-color: var(--warm-white); }
+        .bg-sage { background-color: var(--sage); }
+        .bg-forest { background-color: var(--forest); }
+        .bg-charcoal { background-color: var(--charcoal); }
+        .text-cream { color: var(--cream); }
+        .text-warm-white { color: var(--warm-white); }
+        .text-sage { color: var(--sage); }
+        .text-forest { color: var(--forest); }
+        .text-charcoal { color: var(--charcoal); }
+        .text-soft-brown { color: var(--soft-brown); }
+        .border-sage { border-color: var(--sage); }
+        .border-forest { border-color: var(--forest); }
+        .hover\:text-sage:hover { color: var(--sage); }
+        .hover\:text-forest:hover { color: var(--forest); }
+        .hover\:text-warm-white:hover { color: var(--warm-white); }
+        .focus\:ring-forest:focus { --tw-ring-color: var(--forest); }
+        
+        .btn-primary {
+            background-color: var(--forest);
+            color: var(--warm-white);
+            padding: 14px 32px;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid var(--forest);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--forest);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--forest);
+            padding: 14px 32px;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid var(--forest);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--forest);
+            color: var(--warm-white);
+        }
+        
+        .nav-scrolled {
+            background-color: rgba(248, 246, 240, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 40;
+        }
+
+        .menu-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">MILIN SETH</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html" class="active">ABOUT</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-            <div class="nav-social">
-                <a href="mailto:contact@milinseth.com" class="nav-social-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+<body class="bg-warm-white">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-warm-white">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center py-6">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/logo_black.png" alt="Milin Seth Photography" class="h-8">
                 </a>
-                <a href="https://instagram.com/milinseth" target="_blank" class="nav-social-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
-                        <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2"/>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-4 lg:space-x-12">
+                    <a href="index.html" class="text-sm font-medium uppercase tracking-wider text-soft-brown hover:text-sage transition-colors">Home</a>
+                    <a href="about.html" class="text-sm font-medium uppercase tracking-wider text-forest transition-colors">About</a>
+                    <a href="portfolio.html" class="text-sm font-medium uppercase tracking-wider text-soft-brown hover:text-sage transition-colors">Portfolio</a>
+                    <a href="services.html" class="text-sm font-medium uppercase tracking-wider text-soft-brown hover:text-sage transition-colors">Services</a>
+                    <a href="contact.html" class="text-sm font-medium uppercase tracking-wider text-soft-brown hover:text-sage transition-colors">Contacts</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-charcoal">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+        </div>
+        
+        <!-- Mobile Menu Backdrop -->
+    <div id="menu-backdrop" class="menu-backdrop md:hidden"></div>
+
+    <!-- Mobile Menu -->
+     <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-warm-white shadow-2xl md:hidden z-50">
+            <div class="px-4 py-6">
+                <button id="menu-close" class="float-right text-charcoal">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="clear-both mt-16 space-y-6">
+                    <a href="index.html" class="block text-center text-soft-brown hover:text-sage transition-colors text-lg font-medium uppercase tracking-wider py-2">Home</a>
+                    <a href="about.html" class="block text-center text-forest text-lg font-medium uppercase tracking-wider py-2">About</a>
+                    <a href="portfolio.html" class="block text-center text-soft-brown hover:text-sage transition-colors text-lg font-medium uppercase tracking-wider py-2">Portfolio</a>
+                    <a href="services.html" class="block text-center text-soft-brown hover:text-sage transition-colors text-lg font-medium uppercase tracking-wider py-2">Services</a>
+                    <a href="contact.html" class="block text-center text-white hover:text-sage transition-colors duration-300 text-lg font-medium uppercase tracking-wider py-2">Contacts</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <main>
-        <!-- About Hero Section -->
-        <section class="page-hero">
-            <div class="container">
-                <div class="page-hero-content">
-                    <h1 class="page-title fade-in">About</h1>
-                    <div class="divider">⸻</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Content Section -->
-        <section class="about-section">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2 class="section-title">It starts with a feeling.</h2>
-                        <p class="about-paragraph">Photography has always been my way of holding onto moments — not just how they looked, but how they felt — and I've decided to pursue this with more devotion and passion than I've ever done before.</p>
-                        
-                        <p class="about-paragraph">I love travel and portrait photography, with a focus on light, colour, and the intimacy of everyday life. My shoots are relaxed, collaborative, and personal — shaped by your story, your surroundings, and a shared love of creativity.</p>
-                        
-                        <p class="about-paragraph">Based in Nottinghamshire, UK, I'm always open to travel and love working with individuals, brands, and creatives who value authenticity and storytelling.</p>
-                        
-                        <p class="about-paragraph">Whether we're capturing a portrait or working together on a content project, I bring warmth, intention, and a documentary eye to everything I do.</p>
-                        
-                        <p class="about-highlight">Let's create something meaningful.</p>
-                        
-                        <div class="about-buttons">
-                            <a href="contact.html" class="cta-button">Get in touch</a>
-                            <a href="portfolio.html" class="cta-button secondary">View portfolio</a>
+    <!-- About Section -->
+    <section class="pt-32 pb-24 bg-cream">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="fade-in">
+                        <h1 class="text-4xl md:text-5xl font-light mb-8 text-charcoal" style="font-weight: 300;">Rooted in Nature</h1>
+                        <p class="text-lg text-soft-brown mb-8" style="line-height: 1.8;">I believe photography is about more than capturing moments—it's about honoring the sacred connection between people and the natural world. My work is rooted in slow, intentional practices that celebrate the quiet beauty found in everyday life.</p>
+                        <p class="text-lg text-soft-brown mb-8" style="line-height: 1.8;">Based in the rolling countryside of Nottinghamshire, I find inspiration in the changing seasons, the quality of light filtering through ancient trees, and the stories that unfold when we take time to truly see.</p>
+                        <p class="text-lg text-soft-brown mb-12" style="line-height: 1.8;">Whether documenting intimate portraits, wild landscapes, or the thoughtful details of conscious brands, I approach each project with reverence and care, creating images that feel both timeless and deeply personal.</p>
+                        <div class="space-x-6">
+                            <a href="contact.html" class="btn-primary">Connect</a>
+                            <a href="portfolio.html" class="btn-secondary">View Work</a>
                         </div>
                     </div>
-                    <div class="about-image">
-                        <img src="images/about.jpeg" alt="Milin Seth - Portrait of photographer based in Nottinghamshire" />
+                    <div class="fade-in">
+                        <div class="grid grid-cols-2 gap-6">
+                            <img src="images/about_milin.jpeg" alt="About Milin" class="w-full h-80 object-cover shadow-sm">
+                            <img src="images/photography_style.jpeg" alt="Photography Style" class="w-full h-80 object-cover shadow-sm mt-12">
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-copyright">
-                <p>© 2015 - 2025 Milin Seth - Photographer</p>
+    <!-- Footer -->
+    <footer class="bg-forest text-warm-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <img src="images/logo_white.png" alt="Milin Seth Photography" class="h-8 mb-3 mx-auto md:mx-0">
+                    <p class="text-sage text-sm">rooted in nature, captured with intention</p>
+                </div>
+                <div class="flex flex-wrap justify-center md:justify-start space-x-6 md:space-x-12 mb-8 md:mb-0">
+                    <a href="index.html" class="text-sage hover:text-warm-white transition-colors text-sm uppercase tracking-wider">Home</a>
+                    <a href="about.html" class="text-warm-white text-sm uppercase tracking-wider">About</a>
+                    <a href="portfolio.html" class="text-sage hover:text-warm-white transition-colors text-sm uppercase tracking-wider">Portfolio</a>
+                    <a href="services.html" class="text-sage hover:text-warm-white transition-colors text-sm uppercase tracking-wider">Services</a>
+                    <a href="contact.html" class="text-sage hover:text-warm-white transition-colors text-sm uppercase tracking-wider">Contacts</a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://instagram.com/bymilinseth" target="_blank" class="text-sage hover:text-warm-white transition-colors">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="mailto:milinseth@hotmail.co.uk" class="text-sage hover:text-warm-white transition-colors">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-sage border-opacity-30 mt-12 pt-6 text-center">
+                <p class="text-sage text-sm">&copy; 2024 milin seth photography. crafted with care.</p>
+                <p class="text-sage text-xs mt-1">Made by <a href="https://thefreewebsitewizards.com/" target="_blank" class="hover:text-warm-white transition-colors">The Free Website Wizards</a></p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuBackdrop = document.getElementById('menu-backdrop');
+
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            menuBackdrop.classList.add('active');
+        });
+
+        menuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            menuBackdrop.classList.remove('active');
+        });
+
+        // Close menu when clicking on backdrop
+        menuBackdrop.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            menuBackdrop.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                menuBackdrop.classList.remove('active');
+            });
+        });
+
+        // Fade in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
