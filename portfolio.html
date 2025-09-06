@@ -149,6 +149,26 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item img[data-src] {
+            opacity: 0;
+        }
+        
+        .gallery-item img.loaded {
+            opacity: 1;
+        }
+        
+        .loading-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
         
         .lightbox {
@@ -241,7 +261,7 @@
     <section class="pt-32 pb-24 bg-warm-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-20">
-                <h1 class="text-4xl md:text-5xl font-light mb-6 text-charcoal" style="font-weight: 300;">Wild Moments</h1>
+                <h1 class="text-4xl md:text-5xl font-light mb-6 text-charcoal" style="font-weight: 300;">Captured Moments</h1>
                 <p class="text-lg text-soft-brown max-w-2xl mx-auto" style="line-height: 1.8;">A visual journal of the people, places, and details that inspire me. Each image captured with intention and reverence for the natural world.</p>
             </div>
             
@@ -252,242 +272,108 @@
                     <button class="portfolio-tab pb-2 text-sm font-medium uppercase tracking-wider border-b border-transparent text-soft-brown hover:text-forest transition-colors" data-category="portraits">Portraits</button>
                     <button class="portfolio-tab pb-2 text-sm font-medium uppercase tracking-wider border-b border-transparent text-soft-brown hover:text-forest transition-colors" data-category="travel">Travel</button>
                     <button class="portfolio-tab pb-2 text-sm font-medium uppercase tracking-wider border-b border-transparent text-soft-brown hover:text-forest transition-colors" data-category="creative">Creative</button>
+                    <button class="portfolio-tab pb-2 text-sm font-medium uppercase tracking-wider border-b border-transparent text-soft-brown hover:text-forest transition-colors" data-category="brand">Brand</button>
                 </div>
             </div>
             
             <!-- Portfolio Gallery -->
             <div class="gallery-grid fade-in">
                 <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait1.jpeg" alt="Portrait Photography">
+                    <img data-src="images/portrait1.jpeg" alt="Portrait Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="travel">
-                    <img src="images/travel1.jpeg" alt="Travel Photography">
+                    <img data-src="images/travel1.jpeg" alt="Travel Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="creative">
-                    <img src="images/creative1.jpeg" alt="Creative Project">
+                    <img data-src="images/creative1.jpeg" alt="Creative Project" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait2.jpeg" alt="Portrait Photography">
+                    <img data-src="images/portrait2.jpeg" alt="Portrait Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="travel">
-                    <img src="images/travel2.jpeg" alt="Travel Photography">
+                    <img data-src="images/travel2.jpeg" alt="Travel Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="creative">
-                    <img src="images/creative2.jpeg" alt="Creative Project">
+                    <img data-src="images/creative2.jpeg" alt="Creative Project" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait3.jpeg" alt="Portrait Photography">
+                    <img data-src="images/portrait3.jpeg" alt="Portrait Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="travel">
-                    <img src="images/travel3.jpeg" alt="Travel Photography">
+                    <img data-src="images/travel3.jpeg" alt="Travel Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="creative">
-                    <img src="images/creative3.jpeg" alt="Creative Project">
+                    <img data-src="images/creative3.jpeg" alt="Creative Project" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait4.jpeg" alt="Portrait Photography">
+                    <img data-src="images/portrait4.jpeg" alt="Portrait Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="travel">
-                    <img src="images/travel5.jpeg" alt="Travel Photography">
+                    <img data-src="images/travel5.jpeg" alt="Travel Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="creative">
-                    <img src="images/creative4.jpeg" alt="Creative Project">
+                    <img data-src="images/creative4.jpeg" alt="Creative Project" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait5.jpeg" alt="Portrait Photography">
+                    <img data-src="images/portrait5.jpeg" alt="Portrait Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="travel">
-                    <img src="images/travel6.jpeg" alt="Travel Photography">
+                    <img data-src="images/travel6.jpeg" alt="Travel Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="creative">
-                    <img src="images/creative5.jpeg" alt="Creative Project">
+                    <img data-src="images/creative5.jpeg" alt="Creative Project" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait6.jpeg" alt="Portrait Photography">
+                    <img data-src="images/portrait6.jpeg" alt="Portrait Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="travel">
-                    <img src="images/travel7.jpeg" alt="Travel Photography">
+                    <img data-src="images/travel7.jpeg" alt="Travel Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="creative">
-                    <img src="images/creative6.jpeg" alt="Creative Project">
+                    <img data-src="images/creative6.jpeg" alt="Creative Project" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait7.jpeg" alt="Portrait Photography">
+                    <img data-src="images/portrait7.jpeg" alt="Portrait Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="travel">
-                    <img src="images/travel8.jpeg" alt="Travel Photography">
+                    <img data-src="images/travel8.jpeg" alt="Travel Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="creative">
-                    <img src="images/creative7.jpeg" alt="Creative Project">
+                    <img data-src="images/creative7.jpeg" alt="Creative Project" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait8.jpeg" alt="Portrait Photography">
+                    <img data-src="images/portrait8.jpeg" alt="Portrait Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="travel">
-                    <img src="images/travel9.jpeg" alt="Travel Photography">
+                    <img data-src="images/travel9.jpeg" alt="Travel Photography" class="loading-placeholder lazy-load">
                 </div>
                 <div class="gallery-item" data-category="creative">
-                    <img src="images/creative8.jpeg" alt="Creative Project">
+                    <img data-src="images/creative8.jpeg" alt="Creative Project" class="loading-placeholder lazy-load">
                 </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait10.jpeg" alt="Portrait Photography">
+                <div class="gallery-item" data-category="brand">
+                    <img data-src="images/brand1.jpeg" alt="Brand Photography" class="loading-placeholder lazy-load">
                 </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel10.jpeg" alt="Travel Photography">
+                <div class="gallery-item" data-category="brand">
+                    <img data-src="images/brand2.jpeg" alt="Brand Photography" class="loading-placeholder lazy-load">
                 </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative9.jpeg" alt="Creative Project">
+                <div class="gallery-item" data-category="brand">
+                    <img data-src="images/brand3.jpeg" alt="Brand Photography" class="loading-placeholder lazy-load">
                 </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait11.jpeg" alt="Portrait Photography">
+                <div class="gallery-item" data-category="brand">
+                    <img data-src="images/brand4.jpeg" alt="Brand Photography" class="loading-placeholder lazy-load">
                 </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel11.jpeg" alt="Travel Photography">
+                <div class="gallery-item" data-category="brand">
+                    <img data-src="images/brand5.jpeg" alt="Brand Photography" class="loading-placeholder lazy-load">
                 </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative10.jpeg" alt="Creative Project">
+                <div class="gallery-item" data-category="brand">
+                    <img data-src="images/brand7.jpeg" alt="Brand Photography" class="loading-placeholder lazy-load">
                 </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait12.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel12.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative12.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait13.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel13.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative13.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait14.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel14.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative14.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait16.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel15.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative15.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait17.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel16.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative18.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait18.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel19.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait19.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel20.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel21.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative22.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait22.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel23.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative23.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait23.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative24.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait24.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait25.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative26.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative27.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel28.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel29.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="portraits">
-                    <img src="images/portrait29.jpeg" alt="Portrait Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative30.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative31.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="travel">
-                    <img src="images/travel32.jpeg" alt="Travel Photography">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative32.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative33.jpeg" alt="Creative Project">
-                </div>
-                <div class="gallery-item" data-category="creative">
-                    <img src="images/creative34.jpeg" alt="Creative Project">
-                </div>
+
+
             </div>
         </div>
         
-        <!-- Photography Description Section with Beach Hero Image -->
-        <div class="mt-24">
-            <!-- Beach Hero Image -->
-            <div class="w-full h-64 md:h-80 lg:h-96 overflow-hidden fade-in">
-                <img src="images/travel4.jpeg" alt="Coastal landscape photography" class="w-full h-full object-cover">
-            </div>
-            
-            <!-- Description Content -->
-            <div class="container mx-auto px-6 py-16">
-                <div class="grid md:grid-cols-2 gap-16 items-start">
-                    <div class="fade-in">
-                        <p class="text-lg text-soft-brown mb-6" style="line-height: 1.8;">My work captures the endless dance between ocean and shore, the rhythmic patterns carved by tides and the ever-changing moods of coastal landscapes that speak to the soul.</p>
-                        <div class="w-16 h-px bg-sage mb-6"></div>
-                    </div>
-                    <div class="fade-in">
-                        <p class="text-base text-soft-brown mb-4" style="line-height: 1.8;">I photograph pristine coastlines, hidden coves, and dramatic seascapes, with a focus on capturing the raw power and serene beauty of our oceans and the communities that call these shores home.</p>
-                        <p class="text-base text-soft-brown" style="line-height: 1.8;">After witnessing my first sunrise over the Pacific, and feeling the salt spray on remote beaches, I became captivated by the ocean's endless stories. I've since explored coastlines from California to the Mediterranean, always seeking that perfect moment where light meets water.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
     </section>
 
     <!-- Footer -->
@@ -515,7 +401,7 @@
                 </div>
             </div>
             <div class="border-t border-sage border-opacity-30 mt-12 pt-6 text-center">
-                <p class="text-sage text-sm">&copy; 2024 milin seth photography. crafted with care.</p>
+                <p class="text-sage text-sm">&copy; 2024 Milin Seth Photography. Crafted with Care.</p>
                 <p class="text-sage text-xs mt-1">Made by <a href="https://thefreewebsitewizards.com/" target="_blank" class="hover:text-warm-white transition-colors">The Free Website Wizards</a></p>
             </div>
         </div>
@@ -638,6 +524,31 @@
 
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
+        });
+
+        // Lazy loading for images
+        const lazyImageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const src = img.getAttribute('data-src');
+                    if (src) {
+                        img.src = src;
+                        img.classList.remove('loading-placeholder');
+                        img.classList.add('loaded');
+                        img.removeAttribute('data-src');
+                        lazyImageObserver.unobserve(img);
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '50px'
+        });
+
+        // Observe all lazy-load images
+        document.querySelectorAll('.lazy-load').forEach(img => {
+            lazyImageObserver.observe(img);
         });
     </script>
 </body>
